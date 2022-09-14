@@ -1,0 +1,9 @@
+.form-group {
+    text-align: center;
+    margin: auto 20% auto;
+}
+
+body{
+    background-image:url(../img/home.jpeg);
+    background-position: center top;
+}
