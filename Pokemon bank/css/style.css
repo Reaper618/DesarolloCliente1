@@ -3,7 +3,21 @@
     margin: auto 20% auto;
 }
 
-body{
-    background-image:url(../img/home.jpeg);
-    background-position: center top;
+
+.calcBtn {
+    font: 15px;
+    width: 50px;
+    height: 50px;    
+    margin-bottom: 10px;
 }
+
+#menu {
+    font: 15px;
+    width: 50px;
+    height: 50px;    
+    align-content: center;
+    padding: 50px;
+    border: 50px;
+    
+}
+
