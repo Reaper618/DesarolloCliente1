@@ -17,20 +17,24 @@
   </head>
   <body>
       <br><br>
-      <h1 align="center">BIENVENIDO</h1>
+      <h1 align="center">Deposito</h1>
       <br><br>
-      <h1 align="center">Digite su PIN</h1>
+      <h1 align="center">Digite el monto a depositar</h1>
       <br>
       <br>
-      <div class="form-group">
-          <input type="password" class="form-control" id="InputPin"  placeholder="Enter PIN" pattern="\d{4}" title="Four digit PIN" maxlength="4"> 
+      <div class="form-group"> <!-- Se usa type number para que solo se ingresen numeros-->
+          <input type="number" class="form-control" id="InputMonto"  placeholder="Monto" pattern="\d{4}" title="monto" maxlength="4"> 
           <br>
-          **PIN ES 0000**
           <br>     <!-- Teclado en pantalla para introducir datos, a su vez se puede usar teclado normal -->
           <div id="tclOnScreen" align="center">
+              <input class="calcBtn" id="btn11" type="button" onclick="inputPred(this);" value="100" />
+              <input class="calcBtn" id="btn12" type="button" onclick="inputPred(this);" value="250" />
+              <input class="calcBtn" id="btn13" type="button" onclick="inputPred(this);" value="500" />
+              <br>
+              <br>
               <input class="calcBtn" id="btn1" type="button" onclick="input(this);" value="1" />
               <input class="calcBtn" id="btn2" type="button" onclick="input(this);" value="2" />
-              <input class="calcBtn" id="btn3" type="button" onclick="input(this);" value="3"/>
+              <input class="calcBtn" id="btn3" type="button" onclick="input(this);" value="3"/> 
               <br>
               <input class="calcBtn" id="btn4" type="button" onclick="input(this);" value="4"/>
               <input class="calcBtn" id="btn5" type="button" onclick="input(this);" value="5"/>
@@ -47,21 +51,25 @@
       </div>
 
     <script>
-      function ent() {     //evaluara si el PIN es correcto para seguir a la siguiente pagina o regresar error
-	var PIN="0000";
-	var str1=document.getElementById("InputPin").value;
-	if (str1==PIN) {
-		window.location="home.html";
- 	} else {
- 		alert("Wrong PIN");
- 		document.getElementById("InputPin").value ="";
+      function ent() {
+	var str1=document.getElementById("InputMonto").value;
+	if (str1>0 && str1<1001) {
+		alert("Se ha depositado: $"+ str1);
+ 	} if (str1>1000) {
+ 		alert("Este cajero automatico solo acepta depositos de hasta 1000$ por favor haga su deposito en una sucursal");
+ 		document.getElementById("InputMonto").value ="";
  	}
 }
-        function input(e) { //Revisara el valor en el input y si es menor de 4, entonces agregara al final el valor del boton presionado
-    var tbInput = document.getElementById("InputPin");
-    if (tbInput.value.length < 4) {
+        function input(e) { //Revisara el valor en el input y si es menor de 5, entonces agregara al final el valor del boton presionado
+    var tbInput = document.getElementById("InputMonto");
+    if (tbInput.value.length < 5) {
     tbInput.value=tbInput.value + e.value;
 	}
+}
+function inputPred(e) { //Input de los valores predeterminados, limpia el monto actual en lugar de agregar a
+    var tbInput = document.getElementById("InputMonto");
+	document.getElementById("InputMonto").value ="";
+    tbInput.value=tbInput.value + e.value;
 }
       </script>
     <!-- Optional JavaScript -->
