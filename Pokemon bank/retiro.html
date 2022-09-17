@@ -19,7 +19,7 @@
       <br><br>
       <h1 align="center">Deposito</h1>
       <br><br>
-      <h1 align="center">Digite el monto a depositar</h1>
+      <h1 align="center">Digite el monto a retirar</h1>
       <br>
       <br>
       <div class="form-group"> <!-- Se usa type number para que solo se ingresen numeros-->
@@ -55,9 +55,9 @@
       function ent() {
 	var str1=document.getElementById("InputMonto").value;
 	if (str1>0 && str1<1001) {
-		alert("Se ha depositado: $"+ str1);
+		alert("Se ha retirado: $"+ str1);
  	} if (str1>1000) {
- 		alert("Este cajero automatico solo acepta depositos de hasta 1000$ por favor haga su deposito en una sucursal");
+ 		alert("Este cajero automatico solo acepta retiros de hasta 1000$ por favor haga su retiro en una sucursal");
  		document.getElementById("InputMonto").value ="";
  	}
 }
