@@ -29,3 +29,15 @@ body{
     justify-content: center;
     text-align: center
 }
+
+#tabs{
+    margin: 2%;
+    border-bottom: 1px solid #000;
+}
+
+#tabBoton{
+    margin: 2%;
+    margin-bottom: 0;
+    border: 1px solid #000;
+    border-bottom-color: transparent
+}
